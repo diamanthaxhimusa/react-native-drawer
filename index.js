@@ -475,7 +475,7 @@ export default class Drawer extends Component {
   };
 
   resync = (viewport, props, didRotationChange) => {
-    if (didRotationChange) this._syncAfterUpdate = true
+    if (viewport !== this.state.viewport) this._syncAfterUpdate = true
     viewport = viewport || this.state.viewport
     props = props || this.props
     this._offsetClosed = this.getClosedOffset(props, viewport)
